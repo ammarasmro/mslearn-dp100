@@ -6,7 +6,16 @@ In this exercise, you will create and explore an Azure Machine Learning workspac
 
 As its name suggests, a workspace is a centralized place to manage all of the Azure ML assets you need to work on a machine learning project.
 
-1. In the [Azure portal](https://portal.azure.com), create a new **Machine Learning** resource, specifying a unique workspace name and creating a new resource group in the region nearest your location.
+1. In the [Azure portal](https://portal.azure.com), create a new **Machine Learning** resource, specifying the following settings:
+
+    - **Subscription**: *Your Azure subscription*
+    - **Resource group**: *Create or select a resource group*
+    - **Workspace name**: *Enter a unique name for your workspace*
+    - **Region**: *Select the geographical region closest to you*
+    - **Storage account**: *Note the default new storage account that will be created for your workspace*
+    - **Key vault**: *Note the default new key vault that will be created for your workspace*
+    - **Application insights**: *Note the default new application insights resource that will be created for your workspace*
+    - **Container registry**: None (*one will be created automatically the first time you deploy a model to a container*)
 
     > **Note**: When you create an Azure Machine Learning workspace, you can use some advanced options to restrict access through a *private endpoint* and specify custom keys for data encryption. We won't use these options in this exercise - but you should be aware of them!
 
