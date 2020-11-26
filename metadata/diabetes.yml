@@ -1,0 +1,41 @@
+Database:
+  diabetes:
+    diabetes:
+      rows: 10000
+      PatientID:
+        type: int
+        private_id: True
+      Pregnancies:
+        type: int
+        lower: 0
+        upper: 20
+      PlasmaGlucose:
+        type: float
+        lower: 0
+        upper: 200
+      DiastolicBloodPressure:
+        type: float
+        lower: 0
+        upper: 150
+      TricepsThickness:
+        type: float
+        lower: 0
+        upper: 100
+      SerumInsulin:
+        type: float
+        lower: 0
+        upper: 1000
+      BMI:
+        type: float
+        lower: 0
+        upper: 100
+      DiabetesPedigree:
+        type: float
+        lower: 0
+        upper: 3
+      Age:
+        type: int
+        lower: 0
+        upper: 120
+      Diabetic:
+        type: boolean
