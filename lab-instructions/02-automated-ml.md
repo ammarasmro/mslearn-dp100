@@ -15,8 +15,9 @@ If you have not already done so, complete the *[Create and Explore an Azure Mach
 To use automated machine learning, you require compute on which to run the model training experiment.
 
 1. Sign into [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true) with the Microsoft credentials associated with your Azure subscription, and select your Azure Machine Learning workspace.
-2. In Azure Machine Learning studio, view the **Compute** page; and on the **Compute Instances** tab, start your compute instance if it is not already running. You will use this compute instance to test your trained model.
-3. While the compute instance is starting, switch to the **Compute Clusters** tab, and add a new compute cluster with the following settings. You'll run the automated machine learning experiment on this cluster to take advantage of the ability to distribute the training runs across multiple compute nodes:
+2. In Azure Machine Learning studio, view the **Compute** page; and on the **Compute instances** tab, start your compute instance if it is not already running. You will use this compute instance to test your trained model.
+3. While the compute instance is starting, switch to the **Compute clusters** tab, and add a new compute cluster with the following settings. You'll run the automated machine learning experiment on this cluster to take advantage of the ability to distribute the training runs across multiple compute nodes:
+    - **Region**: *The same region as your workspace*
     - **Virtual Machine priority**: Dedicated
     - **Virtual Machine type**: CPU
     - **Virtual Machine size**: Standard_DS11_v2
@@ -24,7 +25,7 @@ To use automated machine learning, you require compute on which to run the model
     - **Minimum number of nodes**: 0
     - **Maximum number of nodes**: 2
     - **Idle seconds before scale down**: 120
-    - **Enable SSL configuration**: Unselected
+    - **Enable SSH access**: Unselected
 
 ## Create a dataset
 
@@ -56,18 +57,12 @@ Now that you have some compute resources that you can use to process data, you'l
 
 In Azure Machine Learning, operations that you run are called *experiments*. Follow the steps below to run an experiment that uses automated machine learning to train a classification model that predicts diabetes diagnoses.
 
-> **Note**: The automated machine learning capability in Azure Machine Learning supports *supervised* machine learning models - in other words, models for which the training data includes known label values. You can use automated machine learning to train models for:
->
-> - **Classification** (predicting categories or *classes*)
-> - **Regression** (predicting numeric values)
-> - **Time series forecasting** (regression with a time-series element, enabling you to predict numeric values at a future point in time)
-
 1. In Azure Machine Learning studio, view the **Automated ML** page (under **Author**).
 2. Create a new Automated ML run with the following settings:
     - **Select dataset**:
         - **Dataset**: diabetes dataset
     - **Configure run**:
-        - **New experiment name**: mslearn-diabetes
+        - **New experiment name**: mslearn-automl-diabetes
         - **Target column**: Diabetic (*this is the label the model will be trained to predict)*
         - **Select compute cluster**: *the compute cluster you created previously*
     - **Task type and settings**:
@@ -83,15 +78,15 @@ In Azure Machine Learning, operations that you run are called *experiments*. Fol
             - **Enable featurization**: Selected - *this causes Azure Machine Learning to automatically preprocess the features before training.*
 
 3. When you finish submitting the automated ML run details, it will start automatically. You can observe the status of the run in the **Properties** pane.
-4. When the run status changes to *Running*, view the **Models** tab and observe as each possible combination of training algorithm and pre-processing steps is tried and the performance of the resulting model is evaluated. The page will automatically refresh periodically, but you can also select **&#8635; Refresh**. It may take ten minutes or so before models start to appear, as the cluster nodes need to be initialized and the data featurization process completed before training can begin.
-5. Wait for the experiment to finish. It may take a while - now might be a good time for a coffee break!
+4. When the run status changes to *Running*, view the **Models** tab and observe as each possible combination of training algorithm and pre-processing steps is tried and the performance of the resulting model is evaluated. The page will automatically refresh periodically, but you can also select **&#8635; Refresh**. It may take ten minutes or so before models start to appear, as the cluster nodes need to be initialized and the data featurization process completed before training can begin. Now might be a good time for a coffee break!
+5. Wait for the experiment to finish.
 
 ## Review the best model
 
 After the experiment has finished; you can review the best performing model that was generated (note that in this case, we used exit criteria to stop the experiment - so the "best" model found by the experiment may not be the best possible model, just the best one found within the time and metric constraints allowed for this exercise!).
 
 1. On the **Details** tab of the automated machine learning run, note the best model summary.
-2. Select the **Algorithm name** for the best model to view its details.
+2. Select the **Algorithm name** for the best model to view the child-run that produced it.
 
     The best model is identified based on the evaluation metric you specified (*AUC_Weighted*). To calculate this metric, the training process used some of the data to train the model, and applied a technique called *cross-validation* to iteratively test the trained model with data it wasn't trained with and compare the predicted value with the actual known value. From these comparisons, a *confusion matrix* of true-positives, false-positives,true-negatives, and false-negatives is tabulated and additional classification metrics calculated - including a Receiving Operator Curve (ROC) chart that compares the True-Positive rate and False-Positive rate. The area under this curve (AUC) us a common metric used to evaluate classification performance.
 3. Next to the *AUC_Weighted* value, select **View all other metrics** to see values of other possible evaluation metrics for a classification model.
@@ -104,8 +99,8 @@ After you've used automated machine learning to train some models, you can deplo
 
 > **Note**: In Azure Machine Learning, you can deploy a service as an Azure Container Instances (ACI) or to an Azure Kubernetes Service (AKS) cluster. For production scenarios, an AKS deployment is recommended, for which you must create an *inference cluster* compute target. In this exercise, you'll use an ACI service, which is a suitable deployment target for testing, and does not require you to create an inference cluster.
 
-1. In Azure Machine Learning studio, on the **Automated ML** page, select the run for your automated machine learning experiment and view the **Details** tab.
-2. Select the algorithm name for the best model. Then, on the **Model** tab, use the **Deploy** button to deploy the model with the following settings:
+1. Select the **Details** tab for the run that produced the best model.
+2. Use the **Deploy** button to deploy the model with the following settings:
     - **Name**: auto-predict-diabetes
     - **Description**: Predict diabetes
     - **Compute type**: ACI

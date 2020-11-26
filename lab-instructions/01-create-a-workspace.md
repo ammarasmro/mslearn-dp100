@@ -25,7 +25,7 @@ As its name suggests, a workspace is a centralized place to manage all of the Az
 
 You can manage some workspace assets in the Azure portal, but for data scientists, this tool contains lots of irrelevant information and links that relate to managing general Azure resources. *Azure Machine Learning studio* provides a dedicated web portal for working with your workspace.
 
-1. In the Azure portal blade for your Azure Machine Learning workspace, click the link to launch **Azure Machine Learning studio**; or alternatively, in a new browser tab, open [https://ml.azure.com](https://ml.azure.com). If prompted, sign in using the Microsoft account you used in the previous task and select your Azure subscription and workspace.
+1. In the Azure portal blade for your Azure Machine Learning workspace, click the link to launch studio; or alternatively, in a new browser tab, open [https://ml.azure.com](https://ml.azure.com). If prompted, sign in using the Microsoft account you used in the previous task and select your Azure subscription and workspace.
 
     > **Tip** If you have multiple Azure subscriptions, you need to choose the Azure *directory* in which the subscription is defined; then choose the subscription, and finally choose the workspace.
 
@@ -37,19 +37,20 @@ You can manage some workspace assets in the Azure portal, but for data scientist
 One of the benefits of Azure Machine Learning is the ability to create cloud-based compute on which you can run experiments and training scripts at scale.
 
 1. In Azure Machine Learning studio, view the **Compute** page. This is where you'll manage compute resources for your data science activities. There are four kinds of compute resource you can create:
-    - **Compute Instances**: Development workstations that data scientists can use to work with data and models.
-    - **Compute Clusters**: Scalable clusters of virtual machines for on-demand processing of experiment code.
-    - **Inference Clusters**: Deployment targets for predictive services that use your trained models.
-    - **Attached Compute**: Links to other Azure compute resources, such as Virtual Machines or Azure Databricks clusters.
+    - **Compute instances**: Development workstations that data scientists can use to work with data and models.
+    - **Compute clusters**: Scalable clusters of virtual machines for on-demand processing of experiment code.
+    - **Inference clusters**: Deployment targets for predictive services that use your trained models.
+    - **Attached compute**: Links to other Azure compute resources, such as Virtual Machines or Azure Databricks clusters.
 
     For this exercise, you'll create a compute instance so you can run some code in your workspace.
 
-2. On the **Compute Instances** tab, add a new compute instance with the following settings. You'll use this as a workstation to run code in notebooks.
-    - **Virtual Machine type**: CPU
-    - **Virtual Machine size**: Standard_DS11_v2
+2. On the **Compute instances** tab, add a new compute instance with the following settings. You'll use this as a workstation to run code in notebooks.
+    - **Region**: *The same region as your workspace*
+    - **Virtual machine type**: CPU
+    - **Virtual machine size**: Standard_DS11_v2
     - **Compute name**: *enter a unique name*
     - **Enable SSH access**: Unselected (you can use this to enable direct access to the virtual machine using an SSH client)
-    - **Advanced**:
+    - **Show advanced settings**: Note the following settings, but do not select them:
         - **Enable virtual network**: Unselected (you would typically use this in an enterprise environment to enhance network security)
         - **Assign to another user**: Unselected (you can use this to assign a compute instance to a data scientist)
 3. Wait for the compute instance to start and its status to change to **Running**.
@@ -69,7 +70,7 @@ A lot of data science and machine learning experimentation is performed by runni
 
 4. When the command has completed, in the **My files** pane, click **&#8635;** to refresh the view and verify that a new **Users/mslearn-dp100** folder has been created. This folder contains multiple **.ipynb** notebook files.
 5. Close the terminal pane, terminating the session.
-6. In the **mslearn-dp100** folder, open the **Get Started with Notebooks** notebook. Then read the notes and follow the instructions it contains.
+6. In the **Users/mslearn-dp100** folder, open the **Get Started with Notebooks** notebook. Then read the notes and follow the instructions it contains.
 
 > **Tip**: To run a code cell, select the cell you want to run and then use the **&#9655;** button to run it.
 
