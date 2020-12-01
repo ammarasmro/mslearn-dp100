@@ -1,7 +1,6 @@
 ---
 lab:
     title: 'Create an Azure Machine Learning workspace'
-    module: 'Module 1: Getting Started with Azure Machine Learning'
 ---
 
 # Create and Explore an Azure Machine Learning Workspace
