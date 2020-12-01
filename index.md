@@ -6,12 +6,8 @@ layout: home
 
 # Content Directory
 
-Hyperlinks to each of the lab exercises listed below.
-
-## Exercises
-
 {% assign labs = site.pages | where_exp:"page", "page.url contains '/instructions'" %}
-| Exercise |
+| Hyperlinks to each of the lab exercises listed below. |
 | ------- | 
 {% for activity in labs  %}| [{{ activity.lab.title }}]({{ site.github.url }}{{ activity.url }}) |
 {% endfor %}
