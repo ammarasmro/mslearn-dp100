@@ -1,3 +1,7 @@
+---
+lab:
+    title: 'Use Azure Machine Learning Designer'
+---
 # Use Azure Machine Learning Designer
 
 Azure Machine Learning *designer* provides a drag & drop environment in which you can define a workflow, or *pipeline* of data ingestion, transformation, and model training modules to create a machine learning model. You can then publish this pipeline as a web service that client applications can use for *inferencing* (generating predictions from new data).
