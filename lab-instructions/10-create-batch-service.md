@@ -4,7 +4,7 @@ In many scenarios, inferencing is performed as a batch process that uses a predi
 
 ## Before You start
 
-If you have not already done so, complete the *[Create and Explore an Azure Machine Learning Workspace](01-create-a-workspace.md)* exercise to create an Azure Machine Learning workspace and compute instance, and clone the notebooks required for this exercise.
+If you have not already done so, complete the *[Create an Azure Machine Learning Workspace](01-create-a-workspace.md)* exercise to create an Azure Machine Learning workspace and compute instance, and clone the notebooks required for this exercise.
 
 ## Open Jupyter
 
