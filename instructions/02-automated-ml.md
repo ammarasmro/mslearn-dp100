@@ -1,3 +1,8 @@
+---
+lab:
+    title: 'Use Automated Machine Learning'
+---
+
 # Use Automated Machine Learning
 
 Azure Machine Learning includes an *automated machine learning* capability that leverages the scalability of cloud compute to automatically try multiple pre-processing techniques and model-training algorithms in parallel to find the best performing supervised machine learning model for your data.
