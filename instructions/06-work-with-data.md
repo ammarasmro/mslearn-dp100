@@ -1,3 +1,7 @@
+---
+lab:
+    title: 'Work with data'
+---
 # Work with Data
 
 Although it's fairly common to work with data on their local file system, in an enterprise environment it can be more effective to store the data in a central location where multiple data scientists and machine learning engineers can access it.

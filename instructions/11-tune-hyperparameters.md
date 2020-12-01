@@ -1,3 +1,7 @@
+---
+lab:
+    title: 'Tune hyperparameters'
+---
 # Tune Hyperparameters
 
 Hyperparameters are variables that affect how a model is trained, but which can't be derived from the training data. Choosing the optimal hyperparameter values for model training can be difficult, and usually involved a great deal of trial and error.

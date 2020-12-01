@@ -1,3 +1,7 @@
+---
+lab:
+    title: 'Explore differential privacy'
+---
 # Explore Differential Privacy
 
 Often, the data used to train machine learning models contains sensitive values that should be kept private. Differential privacy is a technique in which "noise" is added to the data such that statistical measurements and aggregations remain consistent with the raw source data, but it is more difficult to identify values for individual observations.

@@ -1,3 +1,7 @@
+---
+lab:
+    title: 'Train models'
+---
 # Train Models
 
 Machine Learning is primarily about training models that you can use to provide predictive services to applications. In this exercise, you'll see how you can use Azure Machine Learning experiments to run training scripts, and how to register the resulting trained models.

@@ -1,3 +1,7 @@
+---
+lab:
+    title: 'Work with compute'
+---
 # Work with Compute
 
 All Python code runs in the context of an environment, which determines the Python packages available. The code can be run in an environment on your local workstation, or on some other compute target; such as a cluster for increased scalability.

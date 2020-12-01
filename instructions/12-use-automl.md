@@ -1,3 +1,7 @@
+---
+lab:
+    title: 'Use automated machine learning from the SDK'
+---
 # Use Automated Machine Learning from the SDK
 
 Determining the right algorithm and preprocessing transformations for model training can involve a lot of guesswork and experimentation.

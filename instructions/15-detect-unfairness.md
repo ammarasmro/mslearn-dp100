@@ -1,3 +1,7 @@
+---
+lab:
+    title: 'Detect and mitigate unfairness'
+---
 # Detect and Mitigate Unfairness
 
 Machine learning models can often encapsulate unintentional bias that results in unfairness. For example, a machine learning model that predicts whether or not a patient should be tested for diabetes may predict more accurately for some age groups than others, with the result that a subsection of the patient population is either deprived of appropriate preventative health checks or subjected to unnecessary clinical testing.

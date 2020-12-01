@@ -1,3 +1,7 @@
+---
+lab:
+    title: 'Interpret models'
+---
 # Interpret Models
 
 As machine learning becomes increasingly integral to decisions that affect health, safety, economic wellbeing, and other aspects of people's lives, it's important to be able to understand how models make predictions; and to be able to explain the rationale for machine learning based decisions.
