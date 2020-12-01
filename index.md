@@ -8,10 +8,10 @@ layout: home
 
 Hyperlinks to each of the lab exercises listed below.
 
-## Labs
+## Exercises
 
 {% assign labs = site.pages | where_exp:"page", "page.url contains '/instructions'" %}
-| Module | Lab |
-| --- | --- | 
-{% for activity in labs  %}| {{ activity.lab.module }} | [{{ activity.lab.title }}]({{ site.github.url }}{{ activity.url }}) |
+| Exercise |
+| ------- | 
+{% for activity in labs  %}| [{{ activity.lab.title }}]({{ site.github.url }}{{ activity.url }}) |
 {% endfor %}
