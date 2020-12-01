@@ -1,3 +1,7 @@
+---
+lab:
+    title: 'Run experiments'
+---
 # Run Experiments
 
 Experiments are at the core of a data scientist's work. In Azure Machine Learning, an *experiment* is used to run a script or a pipeline, and usually generates outputs and records metrics. In this exercise, you will use the Azure Machine Learning SDK to run Python code as experiments.
